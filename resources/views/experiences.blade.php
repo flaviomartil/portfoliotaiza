@@ -11,9 +11,8 @@
 
 @section('navbar')
     <div id="vertec-layout">
-        @include('layouts/navbar')
-    </div>
-@endsection
+        @include('layouts/menu')
+        @endsection
 
 @section('profile')
     <div id="vertec-layout">

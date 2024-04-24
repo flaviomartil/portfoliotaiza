@@ -10,16 +10,8 @@
 @endsection
 
 @section('navbar')
-    <div id="vertec-layout2">
-        <div class="mobileNav">
-            <div class="logo">
-                <a href="#"><img src="{{ asset('assets/img/logo.png') }}" alt="vertec"></a>
-            </div>
-            <div class="mobileClick">
-                <i class="fa fa-align-justify"></i>
-            </div>
-        </div>
-        @include('layouts/navbar')
+    <div id="vertec-layout">
+        @include('layouts/menu')
         @endsection
         @section('profile')
     <section class="mainContent">

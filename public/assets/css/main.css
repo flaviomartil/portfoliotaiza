@@ -9,7 +9,7 @@ display: block;
 max-width: 100%;
 height: auto;
 }
-
+.mobileNav { z-index: 1000; }
 .icon-4x{font-size: 50px;}
 .icon-5x {font-size: 5em;}
 .icon-6x{font-size: 20px;}

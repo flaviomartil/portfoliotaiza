@@ -11,9 +11,8 @@
 
 @section('navbar')
     <div id="vertec-layout">
-        @include('layouts/navbar')
+        @include('layouts/menu')
         @endsection
-
         @section('profile')
             <section class="mainContent customPage" style="padding: 10%;">
                 <div class="container">
