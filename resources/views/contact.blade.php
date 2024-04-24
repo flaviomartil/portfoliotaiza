@@ -60,8 +60,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-3">
-                                        <button type="submit" class="buton b_asset buton-2 buton-mini">ENVIAR</button>
-                                    </div>
+                                        <button id="btn-submit" class="buton b_asset buton-2 buton-mini">ENVIAR</button></div>
                                 </div>
                             </form>
                         </div>
@@ -90,6 +89,40 @@
         </div>
     </section>
 </div>
+    <script>
+        $('#btn-submit').click(function(e) {
+            e.preventDefault();
+
+            var name = $('#name').val();
+            var subject = $('#subject').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+
+            $.ajax({
+                url: "{{ route('sendEmail') }}",
+                type: 'POST',
+                data: {
+                    name: name,
+                    subject: subject,
+                    email: email,
+                    message: message,
+                    _token: "{{ csrf_token() }}"
+                },
+                success: function(response) {
+                    // Limpar os campos do formulário ou exibir mensagem de sucesso
+                    $('#name').val('');
+                    $('#subject').val('');
+                    $('#email').val('');
+                    $('#message').val('');
+                    alert('E-mail enviado com sucesso!');
+                },
+                error: function(response) {
+                    // Tratar erros aqui
+                    alert('Erro ao enviar o e-mail!');
+                }
+            });
+        });
+    </script>
     @endsection
 @section('footer')
     @include('layouts/footer')

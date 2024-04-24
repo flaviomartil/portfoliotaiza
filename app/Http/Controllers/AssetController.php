@@ -47,6 +47,7 @@ class AssetController extends Controller
 
         if($type == 'image/jpeg' || $type == 'image/png' || $type == 'image/gif')
         {
+
             return response($file, 200, $headers);
         }
 
