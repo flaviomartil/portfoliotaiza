@@ -33,7 +33,7 @@
                         <p>Para vagas disponíveis ou assuntos profisisonais relacionados a direito.</p>
                         <div class="contact-form2">
                             <form class="form-horizontal" role="form" method="POST" action="{{ route('sendEmail') }}">
-                                <meta name="csrf-token" content="{{ csrf_token() }}">
+                                @csrf
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-4 control-label">Seu Nome:</label>
                                     <div class="col-sm-8">
