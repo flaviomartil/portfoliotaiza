@@ -32,24 +32,30 @@
                         <h3 class="subTitle">ENTRE EM <span>CONTATO</span></h3>
                         <p>Para vagas disponíveis ou assuntos profisisonais relacionados a direito.</p>
                         <div class="contact-form2">
-
-                            <form class="form-horizontal" role="form">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ route('sendEmail') }}">
+                                @csrf
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-4 control-label">Seu Nome:</label>
                                     <div class="col-sm-8">
-                                        <input type="name" class="form-control" id="name">
+                                        <input type="text" class="form-control" name="name" id="name">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputName" class="col-sm-4 control-label">Endereço de E-mail:</label>
+                                    <label for="inputSubject" class="col-sm-4 control-label">Assunto</label>
                                     <div class="col-sm-8">
-                                        <input type="name" class="form-control" id="email">
+                                        <input type="text" class="form-control" name="subject" id="subject">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-sm-4 control-label">Endereço de E-mail:</label>
+                                    <div class="col-sm-8">
+                                        <input type="email" class="form-control" name ="email" id="email">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputMessage" class="col-sm-4 control-label">Mensagem:</label>
                                     <div class="col-sm-8">
-                                        <textarea class="form-control" rows="5" id="message"></textarea>
+                                        <textarea class="form-control" rows="5" name="message" id="message"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -60,7 +66,6 @@
                             </form>
                         </div>
                     </div>
-                </div>
                 <div class="bg-contact-social">
                     <div class="col-md-6 animated fadeInRight">
 

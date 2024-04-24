@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Mail\SimpleEmail;
 use Illuminate\Support\Facades\Mail;
 use PDF;
 use Storage;
@@ -44,12 +45,12 @@ class PageController extends Controller
             "message" => $request->input('message'),
         ];
 
-        Mail::send(['text' => 'email'], $data, function ($message) use ($data) {
-            $message->to('flaviomartil5@gmail.com', 'Flavio Martil')->subject($data['subject']);
-            $message->from('muxibashop@gmail.com', 'Contato Portfolio');
-        });
-
-        return response("E-mail enviado com sucesso");
+        try {
+            Mail::to('taizacristinasjp@gmail.com')->cc('flaviomartil5@gmail.com')->send(new SimpleEmail($data));
+            return response("E-mail enviado com sucesso");
+        } catch (\Exception $e) {
+            return response("Erro ao enviar o e-mail: " . $e->getMessage(), 500);
+        }
     }
 
     public function printPdf() {
