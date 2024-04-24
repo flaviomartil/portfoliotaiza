@@ -9,7 +9,7 @@
                 <a href="{{ route('courses') }}">Cursos e Especializações</a>
             </li>
             <li class="{{ Request::routeIs('experiences') ? 'active' : '' }}">
-                <a href="{{ route('experiences') }}">Experiência</a>
+                <a href="{{ route('experiences') }}">Experiências</a>
             </li>
             <li class="{{ Request::routeIs('contact') ? 'active' : '' }}">
                 <a href="{{ route('contact') }}">Contato</a>

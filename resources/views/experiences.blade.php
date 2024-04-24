@@ -21,7 +21,7 @@
         <div class="container">
                 <div class="col-md-12 animated fadeInDown">
                     <div class="row">
-                    <div class="subTitle"><h2>EXPERIÊNCIA</h2></div>
+                    <div class="subTitle"><h2>EXPERIÊNCIAS</h2></div>
                         <div class="col-md-6 animated fadeInRight">
                     <h3>Estágio Direito | <span>Agu Advocacia Geral Da União</span></h3>
                     <div class="momentDiv" style="margin-bottom: 20px;margin-top: -0.9%;"><small>5/02/2024 até o momento</small></div>
