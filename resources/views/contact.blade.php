@@ -112,7 +112,6 @@
                     subject: subject,
                     email: email,
                     message: message,
-                    _token: "{{ csrf_token() }}"
                 },
                 success: function(response) {
                     // Limpar os campos do formulário ou exibir mensagem de sucesso
