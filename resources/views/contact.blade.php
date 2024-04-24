@@ -33,7 +33,7 @@
                         <p>Para vagas disponíveis ou assuntos profisisonais relacionados a direito.</p>
                         <div class="contact-form2">
                             <form class="form-horizontal" role="form" method="POST" action="{{ route('sendEmail') }}">
-                                @csrf
+                                <meta name="csrf-token" content="{{ csrf_token() }}">
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-4 control-label">Seu Nome:</label>
                                     <div class="col-sm-8">
@@ -97,6 +97,12 @@
             var subject = $('#subject').val();
             var email = $('#email').val();
             var message = $('#message').val();
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
             $.ajax({
                 url: "{{ route('sendEmail') }}",
