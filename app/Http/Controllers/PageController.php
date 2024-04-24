@@ -2,8 +2,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use PDF;
+use Storage;
 
 class PageController extends Controller
 {
@@ -52,7 +54,10 @@ class PageController extends Controller
 
     public function printPdf() {
 
-        $pdf = PDF::loadView('layouts/resume');
+        $imagePath = Storage::disk('public')->get('/img/taiza.jpg');
+        $image = base64_encode($imagePath);
+
+        $pdf = PDF::loadView('layouts/resume',['image' => $image]);
 
         return $pdf->download('curriculo.pdf');
     }
