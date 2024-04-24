@@ -24,8 +24,6 @@
                             </div>
                             <div class="col-md-12 animated fadeInDown">
                                 <div class="pageTitle"><h1>Taiza Cristina de <span>Souza</span></h1></div>
-                                <img src="{{ Storage::url('img/taiza.jpg') }}" align="right">
-
                                 <img src="{{ asset('assets/img/taiza.jpg') }}" align="right">
                                 <p>
                                     Feminino, Solteira, 02/10/1998 <br>
