@@ -11,6 +11,6 @@ Route::get('/experiences', 'App\\Http\\Controllers\\PageController@experiences')
 Route::get('assets/{path}', 'App\\Http\\Controllers\\AssetController@serve')->where('path', '.+');
 
 Route::get('download-cv', 'App\\Http\\Controllers\\PageController@printPdf')->name('cv.download');
-
+Route::get('resumePreview', 'App\\Http\\Controllers\\PageController@resumePreview')->name('resume.preview');
 
 Route::post('/sendEmail', [PageController::class, 'sendEmail'])->name('sendEmail');

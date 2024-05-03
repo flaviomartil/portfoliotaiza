@@ -62,4 +62,13 @@ class PageController extends Controller
 
         return $pdf->download('curriculo.pdf');
     }
+
+    public function resumePreview() {
+        $imagePath = Storage::disk('public')->get('/img/taiza.jpg');
+        $image = base64_encode($imagePath);
+
+        $pdf = PDF::loadView('layouts/resume',['image' => $image]);
+
+        return view('layouts/resume',['image' => $image]);
+    }
 }
